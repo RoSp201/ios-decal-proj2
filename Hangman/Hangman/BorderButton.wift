@@ -1,0 +1,21 @@
+//
+//  BorderButton.swift
+//  Hangman
+//
+//  Created by Robert Spark on 11/6/16.
+//  Copyright © 2016 Shawn D'Souza. All rights reserved.
+//
+
+import UIKit
+
+class BorderButton: UIView {
+
+    /*
+    // Only override draw() if you perform custom drawing.
+    // An empty implementation adversely affects performance during animation.
+    override func draw(_ rect: CGRect) {
+        // Drawing code
+    }
+    */
+
+}

@@ -24,6 +24,7 @@ class GameViewController: UIViewController {
     var word = ""
     var word_array = [Character]()
     var bad_letters = [Character]()
+    var buttons_pushed = [UIButton]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,7 @@ class GameViewController: UIViewController {
         let phrase = hangmanPhrases.getRandomPhrase()
         
         word = (phrase)! // to make comparisons easier
-        word = word.lowercased()
+        word = word.uppercased()
         word_array = Array(word.characters)
         for i in 0..<word_array.count {
             if word_array[i] == " " {
@@ -53,6 +54,10 @@ class GameViewController: UIViewController {
         HangmanStatusImage.image = hangman_imgs[0]
         puzzelWordLabel.text = String(puzzleWord)
         wrongLettersLabel.text = String("")
+        
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "hangman_background.jpeg")
+        self.view.insertSubview(backgroundImage, at: 0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,6 +77,10 @@ class GameViewController: UIViewController {
         tries = 0
         bad_letters = [Character]()
         puzzleWord = ""
+        for i in 0..<buttons_pushed.count {
+            buttons_pushed[i].isEnabled = true
+            buttons_pushed[i].backgroundColor = UIColor.cyan
+        }
         self.viewDidLoad()
     }
     
@@ -86,23 +95,26 @@ class GameViewController: UIViewController {
     */
     
     // MARK: Actions
+    @IBAction func startOverButton(_ sender: UIBarButtonItem) {
+        print("New game navigation button pressed.")
+        self.refresh()
+    
+    }
     @IBAction func GuessLetterButton(_ sender: UIButton) {
         if !correct {
-            print("Button pressed.")
-            sender.isHidden = true
             var c = 0
-            if let letter = guessTextField.text {
-                print(letter)
+            if let letter = sender.titleLabel?.text {
+                print(letter + " pressed")
             }
-            else {
-                print("bad")
-            }
-            if (tries < 6) {
-                if let letter = guessTextField.text
+            if (tries < 6)
+            {
+                if let letter = sender.titleLabel?.text
                 {
+                    buttons_pushed.append(sender)
+                    sender.isEnabled = false
+                    sender.backgroundColor = UIColor.darkGray
                     let l: Character = letter.characters.first!
-                    let count = letter.characters.count
-                    if count == 1
+                    if true
                     {
                         var j = 0
                         while j < word_array.count
@@ -118,12 +130,12 @@ class GameViewController: UIViewController {
                         if c != 0 {
                             puzzelWordLabel.text = puzzleWord
                             if puzzleWord == word {
-                                correct = true
+                                
                                 //display some popup message saying you won!
                                 print("You win.")
                                 let rootViewController: UIViewController = UIApplication.shared.windows[0].rootViewController!
                             
-                                let alert = UIAlertController(title: "You Win!", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+                                let alert = UIAlertController(title: "You Win!\n The phrase was: \n"+word, message: nil, preferredStyle: UIAlertControllerStyle.alert)
                                 alert.addAction(UIAlertAction(title: "Start Over", style: .default, handler: {(action: UIAlertAction!) in
                                 rootViewController.dismiss(animated: true, completion: nil)
                                 print("win game")
@@ -133,42 +145,30 @@ class GameViewController: UIViewController {
                             }
                         }
                         else {
-                            if bad_letters.contains(l) {
-                                print("you already picked this value before")
-                            }
-                            else {
-                                bad_letters.append(l)
-                                bad_letters.append(" ")
-                                wrongLettersLabel.text = String(bad_letters)
-                                tries += 1
-                                HangmanStatusImage.image = hangman_imgs[tries]
+                    
+                            bad_letters.append(l)
+                            bad_letters.append(" ")
+                            wrongLettersLabel.text = String(bad_letters)
+                            wrongLettersLabel.textColor = UIColor.red
+                            tries += 1
+                            HangmanStatusImage.image = hangman_imgs[tries]
+                            if tries >= 6
+                            {
+                                print("You Lose. Try Again")
+                                let rootViewController: UIViewController = UIApplication.shared.windows[0].rootViewController!
+                                    
+                                let alert = UIAlertController(title: "Game Over. Try Again.", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+                                alert.addAction(UIAlertAction(title: "Start Over", style: .default, handler: {(action: UIAlertAction!) in
+                                    rootViewController.dismiss(animated: true, completion: nil)
+                                print("restart game")
+                                self.refresh()
+                                }))
+                                rootViewController.present(alert, animated: true, completion: nil)
                             }
                         }
                     }
                 }
-                else
-                {
-                    print("error. Nothing was entered in text field.")
-                }
-            }
-            else {
-                //display some popup message saying you lost.
-                print("You Lose. Try Again")
-                let rootViewController: UIViewController = UIApplication.shared.windows[0].rootViewController!
-            
-                let alert = UIAlertController(title: "Game Over. Try Again.", message: nil, preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "Start Over", style: .default, handler: {(action: UIAlertAction!) in
-                rootViewController.dismiss(animated: true, completion: nil)
-                print("restart game")
-                self.refresh()
-                }))
-                rootViewController.present(alert, animated: true, completion: nil)
             }
         }
-        else
-        {
-            print("you already won. Start a new game")
-        }
-
     }
 }
