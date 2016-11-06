@@ -1,11 +1,71 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MnC-zs-oLF">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Game View Controller-->
+        <!--Start Screen View Controller-->
+        <scene sceneID="UMO-ht-dcY">
+            <objects>
+                <viewController id="XeA-fA-R17" customClass="StartScreenViewController" customModule="Hangman" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G78-SD-sfQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="sod-n4-5nd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6xo-1Q-MGW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HANGMAN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRp-st-Ogw">
+                                <rect key="frame" x="16" y="161" width="343" height="95"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="35"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmP-TD-leT">
+                                <rect key="frame" x="16" y="318" width="343" height="68"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="NEW GAME">
+                                    <color key="titleColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="NewGameTitleButton:" destination="XeA-fA-R17" eventType="touchUpInside" id="mjL-zb-3g5"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="xGC-XW-ywr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="nmP-TD-leT" secondAttribute="leading" id="9mp-gh-FyQ"/>
+                            <constraint firstItem="nmP-TD-leT" firstAttribute="top" secondItem="G78-SD-sfQ" secondAttribute="bottom" constant="254" id="EFF-IK-3fL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WRp-st-Ogw" secondAttribute="trailing" id="LVr-z0-TZc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nmP-TD-leT" secondAttribute="trailing" id="hUw-gC-F0L"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="WRp-st-Ogw" secondAttribute="leading" id="kaj-Hg-7ch"/>
+                            <constraint firstItem="WRp-st-Ogw" firstAttribute="top" secondItem="G78-SD-sfQ" secondAttribute="bottom" constant="97" id="me3-5C-kH2"/>
+                            <constraint firstItem="sod-n4-5nd" firstAttribute="top" secondItem="nmP-TD-leT" secondAttribute="bottom" constant="281" id="ono-r9-HvC"/>
+                            <constraint firstItem="sod-n4-5nd" firstAttribute="top" secondItem="WRp-st-Ogw" secondAttribute="bottom" constant="411" id="s0U-W5-zev"/>
+                            <constraint firstItem="nmP-TD-leT" firstAttribute="top" secondItem="WRp-st-Ogw" secondAttribute="bottom" constant="62" id="z3g-vO-p6F"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="EUw-kh-o68"/>
+                    <connections>
+                        <outlet property="GameTitleLabel" destination="WRp-st-Ogw" id="n0Z-1b-pRn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PQA-1w-LxZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-39" y="134"/>
+        </scene>
+        <!--HANGMAN-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="Hangman" customModuleProvider="target" sceneMemberID="viewController">
@@ -14,13 +74,112 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="T8t-hK-Ccq">
+                                <rect key="frame" x="16" y="84" width="343" height="423"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="343" placeholderIntrinsicHeight="343" image="hangman1.gif" translatesAutoresizingMaskIntoConstraints="NO" id="S4S-Xt-VHs">
+                                        <rect key="frame" x="71.5" y="0.0" width="200" height="200"/>
+                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="2Ky-0p-JnI"/>
+                                            <constraint firstAttribute="height" constant="200" id="ffd-wB-wsR"/>
+                                            <constraint firstAttribute="width" secondItem="S4S-Xt-VHs" secondAttribute="height" multiplier="1:1" id="zPw-UH-40h"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="343" placeholderIntrinsicHeight="29" text="Default Word Space Holder" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ncj-ue-llM">
+                                        <rect key="frame" x="0.0" y="220" width="343" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="343" placeholderIntrinsicHeight="22" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a new letter" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VYc-x9-gcC">
+                                        <rect key="frame" x="0.0" y="269" width="343" height="22"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhb-m7-yDh">
+                                        <rect key="frame" x="141.5" y="311" width="60" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="xZN-be-gO5"/>
+                                        </constraints>
+                                        <state key="normal" title="Guess">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="GuessLetterButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fGH-5F-KqA"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incorrect Guesses:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vbd-sn-qKX">
+                                        <rect key="frame" x="0.0" y="361" width="343" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" placeholderIntrinsicWidth="343" placeholderIntrinsicHeight="20.5" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4D-WS-OUj">
+                                        <rect key="frame" x="0.0" y="402" width="343" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="Nln-0l-1dH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Ncj-ue-llM" firstAttribute="leading" secondItem="T8t-hK-Ccq" secondAttribute="leading" id="WuM-2e-ata"/>
+                                    <constraint firstItem="Vbd-sn-qKX" firstAttribute="width" secondItem="L4D-WS-OUj" secondAttribute="width" id="ch7-yr-9tg"/>
+                                    <constraint firstItem="Vbd-sn-qKX" firstAttribute="height" secondItem="L4D-WS-OUj" secondAttribute="height" id="puu-XT-O5t"/>
+                                    <constraint firstItem="VYc-x9-gcC" firstAttribute="leading" secondItem="L4D-WS-OUj" secondAttribute="leading" id="rA0-z5-KY8"/>
+                                    <constraint firstItem="Ncj-ue-llM" firstAttribute="leading" secondItem="VYc-x9-gcC" secondAttribute="leading" id="siH-4J-VyM"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="T8t-hK-Ccq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="FzG-ja-frU"/>
+                            <constraint firstItem="T8t-hK-Ccq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Qup-sf-JF8"/>
+                            <constraint firstItem="T8t-hK-Ccq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="c7g-6W-B5s"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="HANGMAN" id="rBB-oU-XSg">
+                        <barButtonItem key="backBarButtonItem" title="Home" id="WPD-ND-QJd"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="HangmanStatusImage" destination="S4S-Xt-VHs" id="koG-VA-P2t"/>
+                        <outlet property="guessTextField" destination="VYc-x9-gcC" id="tRL-CQ-0D2"/>
+                        <outlet property="puzzelWordLabel" destination="Ncj-ue-llM" id="SSH-ls-GXE"/>
+                        <outlet property="wrongLettersLabel" destination="L4D-WS-OUj" id="9cy-iV-7HY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="762" y="134"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GJH-wN-8yf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MnC-zs-oLF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fd3-1Q-4IR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XeA-fA-R17" kind="relationship" relationship="rootViewController" id="7ES-iE-rOF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wsO-Vc-WvQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-849" y="135"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hangman1.gif" width="100" height="100"/>
+    </resources>
 </document>
