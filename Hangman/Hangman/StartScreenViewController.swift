@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class StartScreenViewController: UIViewController {
 
     // MARK: Properties
@@ -25,7 +27,6 @@ class StartScreenViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation

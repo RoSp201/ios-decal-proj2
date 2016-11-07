@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A63148A1DD0532000AF7BBF /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6314891DD0532000AF7BBF /* UIView.swift */; };
+		6A63148B1DD0532000AF7BBF /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6314891DD0532000AF7BBF /* UIView.swift */; };
+		6A63148C1DD0532000AF7BBF /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6314891DD0532000AF7BBF /* UIView.swift */; };
+		6A90C7721DCFF0F50054C973 /* hangman_background.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6A90C7711DCFF0F50054C973 /* hangman_background.jpeg */; };
 		EC93104C1C891F2C00BE736C /* hangman1.gif in Resources */ = {isa = PBXBuildFile; fileRef = EC9310451C891F2C00BE736C /* hangman1.gif */; };
 		EC93104D1C891F2C00BE736C /* hangman2.gif in Resources */ = {isa = PBXBuildFile; fileRef = EC9310461C891F2C00BE736C /* hangman2.gif */; };
 		EC93104E1C891F2C00BE736C /* hangman3.gif in Resources */ = {isa = PBXBuildFile; fileRef = EC9310471C891F2C00BE736C /* hangman3.gif */; };
@@ -44,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A6314891DD0532000AF7BBF /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		6A90C7711DCFF0F50054C973 /* hangman_background.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = hangman_background.jpeg; path = ../../../../Downloads/hangman_background.jpeg; sourceTree = "<group>"; };
 		EC9310451C891F2C00BE736C /* hangman1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = hangman1.gif; path = "basic-hangman-img/hangman1.gif"; sourceTree = "<group>"; };
 		EC9310461C891F2C00BE736C /* hangman2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = hangman2.gif; path = "basic-hangman-img/hangman2.gif"; sourceTree = "<group>"; };
 		EC9310471C891F2C00BE736C /* hangman3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = hangman3.gif; path = "basic-hangman-img/hangman3.gif"; sourceTree = "<group>"; };
@@ -97,6 +103,7 @@
 		EC9310531C891F3400BE736C /* basic-hangman-img */ = {
 			isa = PBXGroup;
 			children = (
+				6A90C7711DCFF0F50054C973 /* hangman_background.jpeg */,
 				EC9310451C891F2C00BE736C /* hangman1.gif */,
 				EC9310461C891F2C00BE736C /* hangman2.gif */,
 				EC9310471C891F2C00BE736C /* hangman3.gif */,
@@ -164,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				ECC94FB71C891E31006B4A98 /* StartScreenViewController.swift */,
+				6A6314891DD0532000AF7BBF /* UIView.swift */,
 				ECC22F701C8917C200749E58 /* GameViewController.swift */,
 			);
 			name = Controller;
@@ -302,6 +310,7 @@
 				ECC22F4A1C89177600749E58 /* Assets.xcassets in Resources */,
 				EC9310521C891F2C00BE736C /* hangman7.gif in Resources */,
 				ECC22F481C89177600749E58 /* Main.storyboard in Resources */,
+				6A90C7721DCFF0F50054C973 /* hangman_background.jpeg in Resources */,
 				EC93104F1C891F2C00BE736C /* hangman4.gif in Resources */,
 				EC93104C1C891F2C00BE736C /* hangman1.gif in Resources */,
 				EC9310501C891F2C00BE736C /* hangman5.gif in Resources */,
@@ -329,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A63148A1DD0532000AF7BBF /* UIView.swift in Sources */,
 				ECC22F711C8917C200749E58 /* GameViewController.swift in Sources */,
 				ECC22F431C89177600749E58 /* AppDelegate.swift in Sources */,
 				ECC22F7E1C891CF800749E58 /* HangmanPhrases.swift in Sources */,
@@ -340,6 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A63148B1DD0532000AF7BBF /* UIView.swift in Sources */,
 				ECC22F581C89177600749E58 /* HangmanTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,6 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A63148C1DD0532000AF7BBF /* UIView.swift in Sources */,
 				ECC22F631C89177600749E58 /* HangmanUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
