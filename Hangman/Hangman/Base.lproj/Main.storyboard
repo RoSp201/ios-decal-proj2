@@ -23,8 +23,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmP-TD-leT" propertyAccessControl="none">
-                                <rect key="frame" x="62" y="322" width="250" height="68"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmP-TD-leT" propertyAccessControl="none">
+                                <rect key="frame" x="62" y="322" width="250" height="39"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <size key="titleShadowOffset" width="0.0" height="-1"/>
@@ -92,6 +92,7 @@
                                 <subviews>
                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="343" placeholderIntrinsicHeight="343" image="hangman1.gif" translatesAutoresizingMaskIntoConstraints="NO" id="S4S-Xt-VHs">
                                         <rect key="frame" x="71.5" y="0.0" width="200" height="200"/>
+                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="2Ky-0p-JnI"/>
                                             <constraint firstAttribute="height" constant="200" id="ffd-wB-wsR"/>
@@ -756,7 +757,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MnC-zs-oLF" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fd3-1Q-4IR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Fd3-1Q-4IR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
